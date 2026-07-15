@@ -6,7 +6,7 @@ publish_date: "2026-07-29"
 session: "4A"
 ---
 
-> **Session:** 4A â€” Lab: MQTT Network Setup
+> **Session:** 4A -- Lab: MQTT Network Setup
 > **Duration:** 60 minutes
 > **Team:** Record your team name and Creation Station number in your notebook
 > **Prerequisites:** Day 4 morning lecture on IoT communication completed
@@ -15,7 +15,7 @@ session: "4A"
 
 ## Safety
 
-> **SAFETY:** All wiring uses 5V DC from the Arduino Uno Q. Safe to touch. Never short 5V to GND. Wi-Fi credentials are provided by the instructor â€” do not share outside the lab.
+> **SAFETY:** All wiring uses 5V DC from the Arduino Uno Q. Safe to touch. Never short 5V to GND. Wi-Fi credentials are provided by the instructor -- do not share outside the lab.
 
 ---
 
@@ -34,7 +34,7 @@ Connect your Arduino Uno Q to the local MQTT broker network. Then create a publi
 | LDR sensor | 1 | From Day 2 sessions |
 | TMP36 temperature sensor | 1 | From Day 2 sessions |
 | Red LED (5mm) | 1 | Response indicator |
-| 220Î© resistor | 1 | Current-limiting |
+| 220 ohm resistor | 1 | Current-limiting |
 | Jumper wires | 6 | As needed |
 
 ---
@@ -48,7 +48,7 @@ Before adding MQTT, confirm your Arduino can connect to the lab Wi-Fi.
 ```cpp
 /*
  * Day 4 Lab: Wi-Fi Connection Test
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Verify Arduino Uno Q connects to lab Wi-Fi
  * Expected result: LCD shows IP address after connection
  */
@@ -91,7 +91,7 @@ void setup() {
 }
 
 void loop() {
-  // Nothing to do â€” connection verified in setup
+  // Nothing to do -- connection verified in setup
 }
 ```
 
@@ -109,8 +109,8 @@ Now connect to the MQTT broker and publish sensor readings.
 
 ```cpp
 /*
- * Day 4 Lab: MQTT Publisher â€” Station Sensor Data
- * Team ___ â€” Creation Station #___
+ * Day 4 Lab: MQTT Publisher -- Station Sensor Data
+ * Team ___ -- Creation Station #___
  * Purpose: Publish LDR light and TMP36 temperature to MQTT broker
  * Expected result: Sensor data displayed on LCD and published to broker
  */
@@ -206,15 +206,15 @@ Change `const int STATION_NUM = 1;` to your actual station number (1-6). This de
 #### Verify publishing
 
 1. Send the sketch to the board with your station number
-2. Watch LCD â€” confirm it shows "Station #X Publisher" header
+2. Watch LCD -- confirm it shows "Station #X Publisher" header
 3. LCD lines 2-3 should update with light and temperature readings every 5 seconds
-4. Cover the LDR â€” verify light values change on the LCD
+4. Cover the LDR -- verify light values change on the LCD
 
 > **EXPECTED RESULT:** LCD header shows station number and "Publisher". Lines 2-3 show live light and temperature readings updating every 5 seconds.
 
 ---
 
-### Part 3: Add MQTT Subscriber â€” Respond to Other Stations
+### Part 3: Add MQTT Subscriber -- Respond to Other Stations
 
 Now subscribe to another station's sensor data. When their light level drops below a threshold, YOUR LED lights up.
 
@@ -222,8 +222,8 @@ Now subscribe to another station's sensor data. When their light level drops bel
 
 ```cpp
 /*
- * Day 4 Lab: MQTT Subscriber â€” Cross-Station Response
- * Team ___ â€” Creation Station #___
+ * Day 4 Lab: MQTT Subscriber -- Cross-Station Response
+ * Team ___ -- Creation Station #___
  * Partner Station: Record in your notebook
  * Purpose: Subscribe to partner station's light data and light LED when dark
  * Expected result: LED illuminates when partner station's LDR is covered
@@ -337,8 +337,8 @@ Each station publishes its own sensor data AND subscribes to all other stations 
 
 ```cpp
 /*
- * Day 4 Lab: Full MQTT Network â€” All Stations
- * Team ___ â€” Creation Station #___
+ * Day 4 Lab: Full MQTT Network -- All Stations
+ * Team ___ -- Creation Station #___
  * Purpose: Publish own sensors, subscribe to all station light events
  * Expected result: Station reports own data AND responds to all other stations
  */
@@ -517,4 +517,4 @@ When your station detects dark AND receives a dark alert from another station, p
 
 ## Next Up
 
-Continue to [Motion Pattern Data Collection](/lab-manuals/day-04/data-collection/) â†’
+Continue to [Motion Pattern Data Collection](/lab-manuals/day-04/data-collection/)

@@ -6,13 +6,13 @@ publish_date: "2026-07-28"
 session: "2F"
 ---
 
-> **Session:** Session 2F â€” Sensor Scavenger Hunt Challenge
+> **Session:** Session 2F -- Sensor Scavenger Hunt Challenge
 > **Audience:** All teams (student-facing)
 > **Time Allotted:** 90 minutes
 > **Team Size:** 3 students per station
 > **Prerequisites:** Sessions 2B, 2C, 2D completed (LDR, potentiometer, hysteresis)
 >
-> Design and build a sensor-based device that reacts to its environment in a creative way. Use everything learned today: voltage dividers, analog readings, `map()`, thresholds, and hysteresis. This is an open-ended challenge â€” there is no single correct answer.
+> Design and build a sensor-based device that reacts to its environment in a creative way. Use everything learned today: voltage dividers, analog readings, `map()`, thresholds, and hysteresis. This is an open-ended challenge -- there is no single correct answer.
 
 ---
 
@@ -26,12 +26,12 @@ session: "2F"
 
 Design and build a sensor-based device that reacts to its environment in a creative way. Your device must satisfy **at least two** of the following requirements:
 
-- [ ] **Uses a sensor input** â€” LDR, potentiometer, or both
-- [ ] **Makes a decision** â€” uses `if/else` with a threshold or hysteresis
-- [ ] **Produces visible output** â€” LED brightness, color, or pattern changes
-- [ ] **Produces audible output** â€” buzzer triggered by sensor condition
-- [ ] **Maps sensor range** â€” uses `map()` to translate values
-- [ ] **Combines two inputs** â€” responds to both light AND knob position
+- [ ] **Uses a sensor input** -- LDR, potentiometer, or both
+- [ ] **Makes a decision** -- uses `if/else` with a threshold or hysteresis
+- [ ] **Produces visible output** -- LED brightness, color, or pattern changes
+- [ ] **Produces audible output** -- buzzer triggered by sensor condition
+- [ ] **Maps sensor range** -- uses `map()` to translate values
+- [ ] **Combines two inputs** -- responds to both light AND knob position
 
 ---
 
@@ -41,12 +41,12 @@ Design and build a sensor-based device that reacts to its environment in a creat
 | :--- | :--- | :--- |
 | 2004 I2C LCD display | 1 | Already connected at your station |
 | LDR (light-dependent resistor) | 2 | Use one or both |
-| 10kÎ© resistors | 3 | Voltage dividers |
-| Potentiometer (10kÎ©) | 1 | Analog control |
+| 10k ohm resistors | 3 | Voltage dividers |
+| Potentiometer (10k ohm) | 1 | Analog control |
 | Red LED (5mm) | 2 | Output |
 | Green LED (5mm) | 1 | Output |
 | RGB LED (common cathode) | 1 | Color output |
-| 220Î© resistors | 4 | Current-limiting |
+| 220 ohm resistors | 4 | Current-limiting |
 | Buzzer (active, 5V) | 1 | Audio output |
 | Jumper wires | 15 | Assorted |
 
@@ -56,7 +56,7 @@ Design and build a sensor-based device that reacts to its environment in a creat
 
 ## Procedure
 
-### Step 1 â€” Brainstorm (10 min)
+### Step 1 -- Brainstorm (10 min)
 
 **Complete as a team.**
 
@@ -75,7 +75,7 @@ _________________________________________________________________________
 - [ ] Buzzer
 - [ ] Both
 
-### Step 2 â€” Sketch the Behavior (10 min)
+### Step 2 -- Sketch the Behavior (10 min)
 
 Describe what happens at different sensor values:
 
@@ -86,7 +86,7 @@ Describe what happens at different sensor values:
 | Very high reading | ______________________ |
 | Rapid change | ______________________ |
 
-### Step 3 â€” Plan the Wiring (5 min)
+### Step 3 -- Plan the Wiring (5 min)
 
 | Component | Connected To |
 | :--------- | :------------ |
@@ -98,17 +98,17 @@ Describe what happens at different sensor values:
 
 ---
 
-### Step 4 â€” Build Your Circuit (15 min)
+### Step 4 -- Build Your Circuit (15 min)
 
 **Hardware Tech leads.**
 
 Build your circuit based on the wiring plan above. Test each sensor individually before combining them.
 
-> **TIP:** Get one sensor reading working on the LCD display BEFORE writing the decision logic. Verify inputs before combining with outputs. The LCD is your primary debugging tool â€” use lines 2â€“4 to display sensor values and state variables.
+> **TIP:** Get one sensor reading working on the LCD display BEFORE writing the decision logic. Verify inputs before combining with outputs. The LCD is your primary debugging tool -- use lines 2-4 to display sensor values and state variables.
 
 ---
 
-### Step 5 â€” Write the Code (25 min)
+### Step 5 -- Write the Code (25 min)
 
 **Coder types. Observer reads and checks off steps.**
 
@@ -117,7 +117,7 @@ Start with this skeleton structure, then fill in the logic:
 ```cpp
 /*
  * Day 2 Scavenger Hunt: [Device Name]
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Team members: ________, ________, ________
  * Purpose: [One-sentence description]
  * Expected result: [What happens when sensors are stimulated]
@@ -165,7 +165,7 @@ void loop() {
 
 ---
 
-### Step 6 â€” Test and Refine (15 min)
+### Step 6 -- Test and Refine (15 min)
 
 1. Test each sensor at extreme values (minimum and maximum)
 2. Adjust thresholds based on actual readings
@@ -174,7 +174,7 @@ void loop() {
 
 ---
 
-### Step 7 â€” Demo (15 min)
+### Step 7 -- Demo (15 min)
 
 Each team demonstrates their device to a roaming instructor. Be prepared to explain:
 
@@ -238,4 +238,4 @@ During the scavenger hunt, rotate roles so all 3 team members participate:
 
 ## Next Up
 
-â† [Session 2D: Hysteresis](/lab-manuals/day-02/hysteresis/) | [Day 3: 3D Design and Actuation](/lab-manuals/day-03/) â†’
+<- [Session 2D: Hysteresis](/lab-manuals/day-02/hysteresis/) | [Day 3: 3D Design and Actuation](/lab-manuals/day-03/) ->

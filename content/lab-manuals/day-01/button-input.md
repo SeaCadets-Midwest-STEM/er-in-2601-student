@@ -1,5 +1,5 @@
 ---
-title: "Lab: Button Input â€” If/Else Decision Making"
+title: "Lab: Button Input - If/Else Decision Making"
 description: "Wire a pushbutton and write code that makes the board change behavior based on input."
 date: 2025-01-01
 publish_date: "2026-07-26"
@@ -8,7 +8,7 @@ session: "1D"
 
 > **Session:** Day 1, Session 1D (Afternoon Block 2)
 > **Duration:** 25 minutes (hands-on portion)
-> **Prerequisites:** Session 1C completed â€” LEDs on Pins 7, 8, 9 already wired
+> **Prerequisites:** Session 1C completed -- LEDs on Pins 7, 8, 9 already wired
 >
 > **SAFETY:** 5V logic. No high voltage. No heat. Standard electronics safety: do not short 5V to GND with a wire while the board is powered.
 
@@ -26,9 +26,9 @@ Give your Arduino its first sense. Wire a pushbutton and write code that makes t
 | :--- | :--- | :--- |
 | Arduino Uno Q (mounted) | 1 | Already at station |
 | Breadboard | 1 | Three LEDs already wired from Lab 1C |
-| Red/Yellow/Green LEDs + resistors | 3 | Pins 9, 8, 7 â€” from Lab 1C |
-| **Pushbutton (6-leg)** | **1** | **NEW â€” wire to Pin 2** |
-| **10kÎ© resistor** | **1** | **NEW â€” pull-down resistor** |
+| Red/Yellow/Green LEDs + resistors | 3 | Pins 9, 8, 7 -- from Lab 1C |
+| **Pushbutton (6-leg)** | **1** | **NEW -- wire to Pin 2** |
+| **10k ohm resistor** | **1** | **NEW -- pull-down resistor** |
 | Jumper wires (female-female) | 2+ | Additional for button circuit |
 
 ---
@@ -41,9 +41,9 @@ A pushbutton needs a **pull-down resistor** to give the pin a known state when t
 
 ### Wiring
 
-- **5V** â†’ one side of the button (jumper wire)
-- **Other side of button** â†’ **Pin 2** (jumper wire)
-- **Other side of button** â†’ **10kÎ© resistor** â†’ **GND** (this is the pull-down)
+- **5V** -> one side of the button (jumper wire)
+- **Other side of button** -> **Pin 2** (jumper wire)
+- **Other side of button** -> **10k ohm resistor** -> **GND** (this is the pull-down)
 - 6-leg buttons: the two legs on the same side are internally connected. Wire to opposite sides.
 
 ### Steps
@@ -51,17 +51,17 @@ A pushbutton needs a **pull-down resistor** to give the pin a known state when t
 1. **Place the pushbutton** on the breadboard, straddling the center groove.
 2. **Connect 5V** to one side of the button with a jumper wire.
 3. **Connect Pin 2** to the other side of the button with a jumper wire.
-4. **Connect the 10kÎ© resistor** from the Pin 2 side to **GND**.
-5. **Verify:** One side of button gets 5V. Other side goes to Pin 2 AND to GND through the 10kÎ© resistor.
+4. **Connect the 10k ohm resistor** from the Pin 2 side to **GND**.
+5. **Verify:** One side of button gets 5V. Other side goes to Pin 2 AND to GND through the 10k ohm resistor.
 
-> **How it works:** When the button is NOT pressed, the 10kÎ© resistor pulls Pin 2 to GND = reads LOW (0). When pressed, 5V connects directly to Pin 2 = reads HIGH (1). The resistor prevents a short circuit from 5V to GND when the button is pressed.
+> **How it works:** When the button is NOT pressed, the 10k ohm resistor pulls Pin 2 to GND = reads LOW (0). When pressed, 5V connects directly to Pin 2 = reads HIGH (1). The resistor prevents a short circuit from 5V to GND when the button is pressed.
 
 ### Self-check
 
 - [ ] Button straddles the center groove
 - [ ] One side connected to 5V
 - [ ] Other side connected to Pin 2
-- [ ] 10kÎ© resistor from Pin 2 side to GND (pull-down)
+- [ ] 10k ohm resistor from Pin 2 side to GND (pull-down)
 
 **Call an instructor to verify wiring before proceeding.**
 
@@ -74,7 +74,7 @@ A pushbutton needs a **pull-down resistor** to give the pin a known state when t
 ```cpp
 /*
  * Session 1D: Button Input
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Turn on LED when button is pressed
  * Expected result: Red LED (Pin 9) lights when button pressed, off when released
  */
@@ -97,7 +97,7 @@ void loop() {
 }
 ```
 
-### Code walkthrough â€” `if/else`
+### Code walkthrough -- `if/else`
 
 | Line | What it does | Why it matters |
 | :--- | :--- | :--- |
@@ -151,9 +151,9 @@ Combine the chase pattern from Session 1C with the button: button pressed = fast
 
 | Symptom | Most Likely Cause | Fix |
 | :--- | :--- | :--- |
-| LED always ON (button does nothing) | Button wired backwards (5V on Pin 2 side, resistor on 5V side) | Swap: 5V â†’ button â†’ Pin 2. Resistor from Pin 2 â†’ GND. |
-| LED flickers randomly | Missing pull-down resistor | Add 10kÎ© resistor from Pin 2 to GND |
-| LED never turns on when pressed | Pin 2 not reading correctly | `digitalRead(buttonPin)` â€” make sure Pin 2 is NOT set as OUTPUT in setup() |
+| LED always ON (button does nothing) | Button wired backwards (5V on Pin 2 side, resistor on 5V side) | Swap: 5V -> button -> Pin 2. Resistor from Pin 2 -> GND. |
+| LED flickers randomly | Missing pull-down resistor | Add 10k ohm resistor from Pin 2 to GND |
+| LED never turns on when pressed | Pin 2 not reading correctly | `digitalRead(buttonPin)` -- make sure Pin 2 is NOT set as OUTPUT in setup() |
 | `==` error in code | Used single `=` instead of `==` in if condition | Change `if (buttonState = HIGH)` to `if (buttonState == HIGH)` |
 | Compilation error: "HIGH not declared" | Typo | Check: `HIGH` (all caps), not `High` or `high` |
 | Button feels mushy, no click | Button not seated in breadboard | Press down firmly. All 6 legs should be in holes. |
@@ -162,7 +162,7 @@ Combine the chase pattern from Session 1C with the button: button pressed = fast
 
 ## Save Your Work
 
-1. In Arduino App Lab, click **File â†’ Save As**
+1. In Arduino App Lab, click **File -> Save As**
 2. Name: `Station__[your number]_Button_Input` (e.g., `Station_03_Button_Input`)
 3. Save in the `Documents/Arduino` folder on the Arduino Uno Q
 
@@ -172,10 +172,10 @@ Combine the chase pattern from Session 1C with the button: button pressed = fast
 
 | Session | Status | What You Built |
 | :--- | :--- | :--- |
-| 1A: Code Sneak Peek | âœ“ | Watched firmware in action |
-| 1B: Hello Matrix | âœ“ | First sketch from scratch â€” blinking LED |
-| 1C: Control Structures | âœ“ | For loops â€” LED chase pattern |
-| 1D: Button Input | **COMPLETED** | If/else â€” the board makes decisions |
+| 1A: Code Sneak Peek | DONE | Watched firmware in action |
+| 1B: Hello Matrix | DONE | First sketch from scratch -- blinking LED |
+| 1C: Control Structures | DONE | For loops -- LED chase pattern |
+| 1D: Button Input | **COMPLETED** | If/else -- the board makes decisions |
 
 ---
 
@@ -191,7 +191,7 @@ Combine the chase pattern from Session 1C with the button: button pressed = fast
 
 ---
 
-## Day 1 Complete! ðŸŽ‰
+## Day 1 Complete!
 
 You've written three programs from scratch, wired four components, and learned the core building blocks of firmware: **outputs**, **loops**, and **decisions**. Tomorrow you'll add sensors to give your board the ability to measure the real world.
 
@@ -199,4 +199,4 @@ You've written three programs from scratch, wired four components, and learned t
 
 ## Previous / Next
 
-â† [Session 1C: LED Chase Pattern](/lab-manuals/day-01/led-chase/) | [Day 2: Sensors and Analog Input](/lab-manuals/day-02/) â†’
+<- [Session 1C: LED Chase Pattern](/lab-manuals/day-01/led-chase/) | [Day 2: Sensors and Analog Input](/lab-manuals/day-02/) ->

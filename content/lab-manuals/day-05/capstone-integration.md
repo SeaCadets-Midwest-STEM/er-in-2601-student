@@ -6,7 +6,7 @@ publish_date: "2026-07-31"
 session: "5A"
 ---
 
-> **Session:** 5A â€” Capstone Build Block I
+> **Session:** 5A -- Capstone Build Block I
 > **Duration:** 90 minutes
 > **Team:** Record your team name and Creation Station number in your notebook
 > **Prerequisites:** Days 1-4 labs completed (sensors, communications, 3D printing)
@@ -19,7 +19,7 @@ session: "5A"
 
 > **SAFETY:** Hot glue guns (if used for enclosure assembly) reach high temperatures. Use caution with fingers and skin.
 
-> **SAFETY:** Keep walkways clear of cables and components. Two Arduino boards per station may create cable clutter â€” organize early.
+> **SAFETY:** Keep walkways clear of cables and components. Two Arduino boards per station may create cable clutter -- organize early.
 
 ---
 
@@ -45,14 +45,14 @@ The goal is integration and demonstration, not perfection. A working pipeline th
 | Breadboard (830-point) | 1 | Circuit prototyping |
 | Jumper wires (assorted) | 20+ | M-M, M-F, F-F connections |
 | LDR (photoresistor) | 1 | Light sensor |
-| 10KÎ© resistor | 2 | Voltage divider for LDR |
-| Potentiometer (10KÎ©) | 1 | Analog knob input |
+| 10K ohm resistor | 2 | Voltage divider for LDR |
+| Potentiometer (10K ohm) | 1 | Analog knob input |
 | Ultrasonic sensor (HC-SR04) | 1 | Distance measurement |
 | TMP36 temperature sensor | 1 | Temperature reading |
 | LED (assorted colors) | 3 | Visual output indicators |
-| 220Î© resistors | 3 | LED current limiting |
+| 220 ohm resistors | 3 | LED current limiting |
 | Button (momentary) | 1 | Digital input |
-| MAX7219 8Ã—8 matrix display | 1 | Visual output |
+| MAX7219 8x8 matrix display | 1 | Visual output |
 | 2004 I2C LCD display | 1 | Debug output |
 | Day 3 printed enclosure | 1 | Per team (from Day 3 prints) |
 | Cable ties/zip ties | 10 | Cable management |
@@ -94,13 +94,13 @@ Each team received a capstone scenario card. Review it together:
 
 Based on your scenario, wire the required sensor(s) to the primary Arduino board.
 
-#### LDR (Light Sensor) â€” Voltage Divider
+#### LDR (Light Sensor) -- Voltage Divider
 
 | LDR Pin | Arduino Pin |
 | :------ | :---------- |
 | One side | 5V |
 | Other side | A0 (analog input) |
-| Also connect 10KÎ© resistor from A0 to GND | |
+| Also connect 10K ohm resistor from A0 to GND | |
 
 #### TMP36 (Temperature Sensor)
 
@@ -125,7 +125,7 @@ Based on your scenario, wire the required sensor(s) to the primary Arduino board
 | :--------- | :---------- |
 | One side | Digital 2 |
 | Other side | GND |
-| Also connect 10KÎ© resistor from Digital 2 to GND (pull-down) | |
+| Also connect 10K ohm resistor from Digital 2 to GND (pull-down) | |
 
 #### Potentiometer
 
@@ -148,7 +148,7 @@ Combine code patterns from previous labs into a single sketch.
 ```cpp
 /*
  * Capstone: [Team Project Name]
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: [1-sentence description]
  * Expected result: Sensor reads values, sends data wirelessly, output responds
  */
@@ -202,7 +202,7 @@ void loop() {
   lcd.setCursor(0, 2);
   lcd.print(" Sensor: " + String(sensorValue) + "          ");
 
-  // Send wirelessly (pseudo-code â€” replace with your method)
+   // Send wirelessly (pseudo-code -- replace with your method)
   // sendData(sensorValue);
 
   // Update output (LED, matrix, etc.)
@@ -240,7 +240,7 @@ Verify the complete pipeline:
 2. **Wireless transmission:** Check with instructor using MQTT Explorer or BLE scanner that data is being sent.
 3. **Output response:** LED, matrix, or dashboard reacts to sensor changes.
 
-> **EXPECTED RESULT:** Touch the sensor â†’ value changes on LCD â†’ data appears on wireless receiver â†’ output device responds.
+> **EXPECTED RESULT:** Touch the sensor -> value changes on LCD -> data appears on wireless receiver -> output device responds.
 
 ---
 
@@ -280,7 +280,7 @@ Combine two sensors for richer data. Example: LDR + TMP36 for "warehouse environ
 
 ### Challenge 2: Add Hysteresis (5 min)
 
-Add threshold logic so the output only changes when the sensor crosses a boundary (prevents flickering). Example: LED turns on only when temperature rises above 25Â°C and stays on until it drops below 23Â°C.
+Add threshold logic so the output only changes when the sensor crosses a boundary (prevents flickering). Example: LED turns on only when temperature rises above 25 C and stays on until it drops below 23 C.
 
 ### Challenge 3: Improve the Description Card (5 min)
 
@@ -322,6 +322,6 @@ These skills are more valuable than any single sensor reading or code snippet.
 After lunch, your team will set up a demo station. Practice a 3-minute loop:
 
 1. Show the device in its enclosure (30 sec)
-2. Interact with the sensor â€” show the input changing (30 sec)
+2. Interact with the sensor -- show the input changing (30 sec)
 3. Show the wireless output (60 sec)
-4. Explain the data flow: "Sensor â†’ Board â†’ MQTT/BLE â†’ Display" (60 sec)
+4. Explain the data flow: "Sensor -> Board -> MQTT/BLE -> Display" (60 sec)

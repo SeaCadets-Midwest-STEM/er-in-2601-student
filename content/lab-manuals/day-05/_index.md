@@ -6,10 +6,10 @@ publish_date: "2026-07-31"
 menu: main
 ---
 
-Day 5 is the capstone integration day â€” combining everything learned over the past four days into a single working device that demonstrates a "Hidden Economy" concept.
+Day 5 is the capstone integration day -- combining everything learned over the past four days into a single working device that demonstrates a "Hidden Economy" concept.
 
 ## Labs
 
-- [Capstone Device Integration](/lab-manuals/day-05/capstone-integration/) â€” Build your complete device: sensors, wireless communication, visual output, and 3D printed enclosure
+- [Capstone Device Integration](/lab-manuals/day-05/capstone-integration/) -- Build your complete device: sensors, wireless communication, visual output, and 3D printed enclosure
 
 > **Note:** This lab integrates skills from all previous days. Review your team's capstone scenario card before starting.

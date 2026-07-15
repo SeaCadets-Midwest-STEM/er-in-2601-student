@@ -6,7 +6,7 @@ publish_date: "2026-07-27"
 session: "2D"
 ---
 
-> **Session:** 2D â€” Lab: Sensor Thresholds and Hysteresis
+> **Session:** 2D -- Lab: Sensor Thresholds and Hysteresis
 > **Duration:** 45 minutes
 > **Prerequisites:** Sessions 2B and 2C completed
 
@@ -29,22 +29,22 @@ Discover why sensor readings near a threshold cause flickering and learn the tec
 | Part | Qty | Notes |
 | :--- | :--- | :--- |
 | 2004 I2C LCD display | 1 | Already connected |
-| LDR + 10kÎ© resistor | 1 | Voltage divider on Pin A0 |
-| Red LED + 220Î© resistor | 1 | Output indicator on Pin 9 |
+| LDR + 10k ohm resistor | 1 | Voltage divider on Pin A0 |
+| Red LED + 220 ohm resistor | 1 | Output indicator on Pin 9 |
 | Jumper wires | 5 | As needed |
 
 ---
 
 ## Procedure
 
-### Part 1: The Problem â€” Flickering at the Threshold
+### Part 1: The Problem -- Flickering at the Threshold
 
-Wire the LDR voltage divider (5V â†’ LDR â†’ A0 â†’ 10kÎ© â†’ GND) and an LED on Pin 9. Type this sketch into your editor:
+Wire the LDR voltage divider (5V -> LDR -> A0 -> 10k ohm -> GND) and an LED on Pin 9. Type this sketch into your editor:
 
 ```cpp
 /*
  * Day 2 Lab: Hysteresis - The Flickering Problem
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Demonstrate threshold flickering problem
  * Expected result: LED flickers when light level hovers near threshold
  */
@@ -93,7 +93,7 @@ void loop() {
 
 1. Partially cover the LDR with your finger so the reading hovers near 500
 2. Watch what happens to the LED
-3. Watch the LCD line 4 â€” it rapidly switches between ON and OFF
+3. Watch the LCD line 4 - it rapidly switches between ON and OFF
 
 > **EXPECTED RESULT:** When the sensor reading hovers near the threshold value (500), the LED flickers rapidly, switching between ON and OFF. The LCD shows the state changing back and forth. This is the **threshold flickering problem**.
 
@@ -101,14 +101,14 @@ void loop() {
 
 ---
 
-### Part 2: The Solution â€” Hysteresis
+### Part 2: The Solution -- Hysteresis
 
 Now type the hysteresis version:
 
 ```cpp
 /*
  * Day 2 Lab: Hysteresis - The Solution
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Use hysteresis to eliminate threshold flickering
  * Expected result: LED switches cleanly, no flickering near threshold
  */
@@ -168,8 +168,8 @@ Hysteresis uses **two thresholds** instead of one:
 | Light Level | Single Threshold (500) | Hysteresis (450/550) |
 | :---------- | :--------------------- | :-------------------- |
 | Reading > 550 | ON | ON |
-| Reading 500â€“550 | **Flickering!** | **Stays ON** (won't turn off until < 450) |
-| Reading 450â€“500 | **Flickering!** | **Stays OFF** (won't turn on until > 550) |
+| Reading 500-550 | **Flickering!** | **Stays ON** (won't turn off until < 450) |
+| Reading 450-500 | **Flickering!** | **Stays OFF** (won't turn on until > 550) |
 | Reading < 450 | OFF | OFF |
 
 The "dead zone" between 450 and 550 is where hysteresis prevents flickering. Once the LED turns ON (reading > 550), it won't turn OFF until the reading drops below 450. Once OFF (reading < 450), it won't turn ON until the reading rises above 550.
@@ -205,7 +205,7 @@ Add a potentiometer on Pin A1. Use the potentiometer value to control the size o
 
 Use three LEDs (green, yellow, red) with hysteresis:
 - Green: reading > 700 (bright)
-- Yellow: reading 300â€“700 (normal, with hysteresis at both boundaries)
+- Yellow: reading 300-700 (normal, with hysteresis at both boundaries)
 - Red: reading < 300 (dark)
 
 This requires **four** thresholds (two for each boundary).
@@ -216,13 +216,13 @@ This requires **four** thresholds (two for each boundary).
 
 | System | What it prevents | Thresholds |
 | :------ | :--------------- | :---------- |
-| Thermostat | AC compressor cycling on/off rapidly | Heat at 68Â°F, Cool at 72Â°F |
+| Thermostat | AC compressor cycling on/off rapidly | Heat at 68F, Cool at 72F |
 | Elevator doors | Door open/close flickering when someone stands at the threshold | Close when hall sensor clear for 5s, Open when sensor triggered |
-| CPU fan speed | Fan ramping up/down rapidly at idle | Spin up at 75Â°C, Spin down at 60Â°C |
+| CPU fan speed | Fan ramping up/down rapidly at idle | Spin up at 75C, Spin down at 60C |
 | Smartphone screen | Screen turning on/off when tucked in pocket | Wake at full cover removal, Sleep at full cover |
 
 ---
 
 ## Previous / Next
 
-â† [Session 2C: Potentiometer](/lab-manuals/day-02/potentiometer-analog/) | [Session 2F: Sensor Scavenger Hunt](/lab-manuals/day-02/sensor-scavenger-hunt/) â†’
+<- [Session 2C: Potentiometer](/lab-manuals/day-02/potentiometer-analog/) | [Session 2F: Sensor Scavenger Hunt](/lab-manuals/day-02/sensor-scavenger-hunt/) ->

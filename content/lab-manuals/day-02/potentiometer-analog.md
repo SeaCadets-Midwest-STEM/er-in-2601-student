@@ -6,7 +6,7 @@ publish_date: "2026-07-27"
 session: "2C"
 ---
 
-> **Session:** 2C â€” Lab: Potentiometer and Analog Reading
+> **Session:** 2C -- Lab: Potentiometer and Analog Reading
 > **Duration:** 45 minutes
 > **Prerequisites:** Session 2B (Light Sensor Circuit) completed
 
@@ -29,8 +29,8 @@ Explore how a potentiometer works as a manually controlled variable resistor. Re
 | Part | Qty | Notes |
 | :--- | :--- | :--- |
 | 2004 I2C LCD display | 1 | Already connected at station |
-| Potentiometer (10kÎ©, 3-leg) | 1 | Round body, 3 pins, adjustment shaft |
-| Red LED + 220Î© resistor | 1 | For PWM output |
+| Potentiometer (10k ohm, 3-leg) | 1 | Round body, 3 pins, adjustment shaft |
+| Red LED + 220 ohm resistor | 1 | For PWM output |
 | Jumper wires | 5 | Assorted colors |
 
 ---
@@ -47,21 +47,21 @@ Explore how a potentiometer works as a manually controlled variable resistor. Re
 | Middle leg | Pin A0 | Signal output (wiper) |
 | Right leg | GND | Fixed ground |
 
-> **TIP:** The potentiometer's middle leg is the "wiper" â€” it slides between the two fixed legs as you turn the shaft. The wiper voltage is what changes.
+> **TIP:** The potentiometer's middle leg is the "wiper" - it slides between the two fixed legs as you turn the shaft. The wiper voltage is what changes.
 
 #### Steps
 
 1. Insert potentiometer on breadboard (3 legs span the center groove)
-2. Jumper: left leg â†’ 5V
-3. Jumper: middle leg â†’ Pin A0
-4. Jumper: right leg â†’ GND
+2. Jumper: left leg -> 5V
+3. Jumper: middle leg -> Pin A0
+4. Jumper: right leg -> GND
 
 ### Part 2: Read and Display Values
 
 ```cpp
 /*
  * Day 2 Lab: Potentiometer Reading
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Read potentiometer and display on LCD
  * Expected result: LCD shows 0-1023, changes as knob is turned
  */
@@ -96,23 +96,23 @@ void loop() {
 
 | Action | Expected LCD |
 | :------ | :------------ |
-| Turn knob fully counter-clockwise | Knob: 0â€“20, Range: 0% |
+| Turn knob fully counter-clockwise | Knob: 0-20, Range: 0% |
 | Turn knob to middle | Knob: ~500, Range: ~50% |
-| Turn knob fully clockwise | Knob: 1000â€“1023, Range: 100% |
+| Turn knob fully clockwise | Knob: 1000-1023, Range: 100% |
 | Turn knob slowly | Values change smoothly |
 
-> **EXPECTED RESULT:** LCD shows values 0â€“1023 on line 2 and a percentage on line 3 that tracks knob position.
+> **EXPECTED RESULT:** LCD shows values 0-1023 on line 2 and a percentage on line 3 that tracks knob position.
 
 ---
 
 ### Part 3: Control LED Brightness with the Knob
 
-Wire an LED to Pin 9 (PWM-capable) through a 220Î© resistor. Update the sketch:
+Wire an LED to Pin 9 (PWM-capable) through a 220 ohm resistor. Update the sketch:
 
 ```cpp
 /*
  * Day 2 Lab: Potentiometer Controls LED
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Knob controls LED brightness via PWM
  * Expected result: LED brightness follows knob position
  */
@@ -149,7 +149,7 @@ void loop() {
 
 #### Key concept: `map()` for PWM
 
-The potentiometer reads 0â€“1023 (10-bit ADC). PWM brightness uses 0â€“255 (8-bit). `map()` converts between them:
+The potentiometer reads 0-1023 (10-bit ADC). PWM brightness uses 0-255 (8-bit). `map()` converts between them:
 
 ```
 map(potValue, 0, 1023, 0, 255)
@@ -169,9 +169,9 @@ map(potValue, 0, 1023, 0, 255)
 
 ## Verification Checklist
 
-- [ ] Potentiometer wired (5V â†’ left, A0 â†’ middle, GND â†’ right)
+- [ ] Potentiometer wired (5V -> left, A0 -> middle, GND -> right)
 - [ ] Sketch sends to board without errors
-- [ ] LCD shows knob values changing 0â€“1023 as turned
+- [ ] LCD shows knob values changing 0-1023 as turned
 - [ ] LED brightness responds to knob position
 - [ ] Sketch saved as `Station__Potentiometer` with station number
 
@@ -187,11 +187,11 @@ Combine the chase pattern from Day 1 with the potentiometer: use the knob to con
 
 ### Challenge 2: Custom Range Mapping (10 min)
 
-Map the potentiometer to a non-linear range. For example, make the bottom 50% of the knob control 0â€“10 brightness, and the top 50% control 10â€“255. This creates a "gentle fade then bright" effect.
+Map the potentiometer to a non-linear range. For example, make the bottom 50% of the knob control 0-10 brightness, and the top 50% control 10-255. This creates a "gentle fade then bright" effect.
 
 ### Challenge 3: Two-LED Mixer (10 min)
 
-Add a second LED to Pin 10. Use one half of the knob range (0â€“512) for the first LED and the other half (512â€“1023) for the second LED. As you turn the knob, one LED fades out as the other fades in.
+Add a second LED to Pin 10. Use one half of the knob range (0-512) for the first LED and the other half (512-1023) for the second LED. As you turn the knob, one LED fades out as the other fades in.
 
 ---
 
@@ -210,4 +210,4 @@ Add a second LED to Pin 10. Use one half of the knob range (0â€“512) for th
 
 ## Previous / Next
 
-â† [Session 2B: Light Sensor](/lab-manuals/day-02/light-sensor-circuit/) | [Session 2D: Hysteresis](/lab-manuals/day-02/hysteresis/) â†’
+<- [Session 2B: Light Sensor](/lab-manuals/day-02/light-sensor-circuit/) | [Session 2D: Hysteresis](/lab-manuals/day-02/hysteresis/) ->

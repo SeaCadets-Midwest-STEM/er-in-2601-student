@@ -6,7 +6,7 @@ publish_date: "2026-07-29"
 session: "4B"
 ---
 
-> **Session:** 4B â€” Data Collection Lab
+> **Session:** 4B -- Data Collection Lab
 > **Duration:** 60 minutes
 > **Team:** Record your team name and Creation Station number in your notebook
 > **Prerequisites:** Day 4 morning lecture on machine learning fundamentals completed
@@ -15,7 +15,7 @@ session: "4B"
 
 ## Safety
 
-> **SAFETY:** All wiring uses 5V DC from the Arduino Uno Q. Safe to touch. Movement activities require clear space around station â€” keep walkways unobstructed.
+> **SAFETY:** All wiring uses 5V DC from the Arduino Uno Q. Safe to touch. Movement activities require clear space around station -- keep walkways unobstructed.
 
 > **SAFETY:** Running or rapid movement near equipment. Designate a "movement zone" at least 3 meters clear of other stations.
 
@@ -38,9 +38,9 @@ Collect labeled sensor data for different movement patterns. Each team will reco
 | microSD card (4GB or smaller) | 1 | Format FAT32 |
 | microSD card shield/module | 1 | Stacks on Arduino |
 | 4x momentary pushbuttons | 1 each | Movement class selection |
-| 4x 10kÎ© pull-down resistors | 1 each | Button inputs |
+| 4x 10k ohm pull-down resistors | 1 each | Button inputs |
 | Green LED (5mm) | 1 | Recording indicator |
-| 220Î© resistor | 1 | Current-limiting |
+| 220 ohm resistor | 1 | Current-limiting |
 | Jumper wires | As needed | Sensor connections |
 
 ---
@@ -62,11 +62,11 @@ Connect 4 pushbuttons to digital pins 3, 4, 5, and 6:
 | Button 3 (Pin 5) | Digital 5 | STANDING |
 | Button 4 (Pin 6) | Digital 6 | WAVING |
 
-Each button connects one side to its digital pin, the other side to GND. Add a 10kÎ© pull-down resistor from each pin to GND.
+Each button connects one side to its digital pin, the other side to GND. Add a 10k ohm pull-down resistor from each pin to GND.
 
 #### Recording LED
 
-Connect green LED (through 220Î© resistor) to digital pin 9, cathode to GND. LED illuminates during recording.
+Connect green LED (through 220 ohm resistor) to digital pin 9, cathode to GND. LED illuminates during recording.
 
 ---
 
@@ -75,7 +75,7 @@ Connect green LED (through 220Î© resistor) to digital pin 9, cathode to GND. L
 ```cpp
 /*
  * Day 4 Lab: Motion Pattern Data Collector
- * Team ___ â€” Creation Station #___
+ * Team ___ -- Creation Station #___
  * Purpose: Record PIR + ultrasonic readings to SD card for ML training
  * Expected result: LCD shows menu, button press starts 5-second recording saved to SD
  */
@@ -234,7 +234,7 @@ void recordSession(String label) {
 
 1. Send the sketch to the board
 2. LCD shows "Motion Data Logger" menu with button instructions
-3. Press Button 3 (WALKING) â€” LED illuminates for 5 seconds, LCD shows recording progress
+3. Press Button 3 (WALKING) -- LED illuminates for 5 seconds, LCD shows recording progress
 4. After recording, LCD shows "Records: 1" and "Last: WALKING"
 
 > **EXPECTED RESULT:** LCD displays menu. Pressing a button starts a 5-second recording (green LED on). After recording, the counter increments and LCD confirms the saved class label.
@@ -317,7 +317,7 @@ Add a summary line after each recording on the LCD.
 | Symptom | Likely Cause | Fix |
 | :------- | :------------ | :--- |
 | LCD shows "SD FAILED!" | SD card not inserted, wrong format, or wrong CS pin | Insert card. Format FAT32 (4GB max). Check CS pin |
-| Button press does nothing | Button not wired correctly or pull-down resistors missing | Check button connections. Verify 10kÎ© resistors to GND |
+| Button press does nothing | Button not wired correctly or pull-down resistors missing | Check button connections. Verify 10k ohm resistors to GND |
 | Distance readings are 0 | Ultrasonic sensor not wired correctly | Check jumper wires. Verify TRIG=7, ECHO=8 |
 | PIR always reads HIGH | Sensor still calibrating | Wait 60 seconds for calibration |
 | Recordings look the same | Performer not varying movements enough | Review movement descriptions. Move closer to sensors |
@@ -326,7 +326,7 @@ Add a summary line after each recording on the LCD.
 
 ## Key Concept Summary
 
-**Data collection is the foundation of machine learning.** The quality of your training data determines the quality of your model â€” "garbage in, garbage out" (GIGO).
+**Data collection is the foundation of machine learning.** The quality of your training data determines the quality of your model -- "garbage in, garbage out" (GIGO).
 
 **What makes good training data:**
 - **Quantity:** Enough examples to cover variation (20+ per class)
@@ -338,4 +338,4 @@ Add a summary line after each recording on the LCD.
 
 ## Previous Labs
 
-â† [MQTT Board-to-Board Communication](/lab-manuals/day-04/mqtt-board-to-board/)
+[Back to MQTT Board-to-Board Communication](/lab-manuals/day-04/mqtt-board-to-board/)

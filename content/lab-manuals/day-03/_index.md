@@ -10,7 +10,7 @@ Day 3 focuses on ultrasonic distance sensing and 3D design for your project encl
 
 ## Labs
 
-- [Ultrasonic Ruler](/lab-manuals/day-03/ultrasonic-ruler/) â€” Wire an HC-SR04 sensor and build a proximity-warning system
-- [3D Design Sprint Challenge](/lab-manuals/day-03/design-sprint/) â€” Design, model, and prepare a functional enclosure for printing
+- [Ultrasonic Ruler](/lab-manuals/day-03/ultrasonic-ruler/) -- Wire an HC-SR04 sensor and build a proximity-warning system
+- [3D Design Sprint Challenge](/lab-manuals/day-03/design-sprint/) -- Design, model, and prepare a functional enclosure for printing
 
 > **Note:** These labs require the Day 3 morning lectures on ultrasonic sensing and FreeCAD to be completed first.

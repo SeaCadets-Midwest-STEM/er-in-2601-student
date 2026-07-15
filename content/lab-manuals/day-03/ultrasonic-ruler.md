@@ -1,12 +1,12 @@
 ---
-title: "Lab: Ultrasonic Ruler â€” Distance Detection"
+title: "Lab: Ultrasonic Ruler -- Distance Detection"
 description: "Wire an HC-SR04 ultrasonic sensor and build a proximity-warning system with LED and buzzer indicators."
 date: 2025-01-01
 publish_date: "2026-07-28"
 session: "3B"
 ---
 
-> **Session:** 3B â€” Lab: Ultrasonic Ruler
+> **Session:** 3B -- Lab: Ultrasonic Ruler
 > **Duration:** 60 minutes
 > **Team:** Record your team name and Creation Station number in your notebook
 > **Prerequisites:** Session 3A (Ultrasonic Distance Sensing) lecture completed
@@ -21,7 +21,7 @@ session: "3B"
 
 ## Objective
 
-Wire an HC-SR04 ultrasonic sensor to your Arduino Uno Q and build an "Ultrasonic Ruler" that displays real-time distance measurements. Then add threshold-based actions: LED indicators and buzzer warnings that respond to proximity â€” just like a car parking sensor.
+Wire an HC-SR04 ultrasonic sensor to your Arduino Uno Q and build an "Ultrasonic Ruler" that displays real-time distance measurements. Then add threshold-based actions: LED indicators and buzzer warnings that respond to proximity -- just like a car parking sensor.
 
 ---
 
@@ -32,7 +32,7 @@ Wire an HC-SR04 ultrasonic sensor to your Arduino Uno Q and build an "Ultrasonic
 | 2004 I2C LCD display | 1 | Already connected at your station |
 | HC-SR04 ultrasonic sensor | 1 | Two "eyes" (transmitter and receiver) on blue PCB |
 | Red LED (5mm) | 1 | Long leg = anode |
-| 220Î© resistor | 1 | Red-red-brown-gold |
+| 220 ohm resistor | 1 | Red-red-brown-gold |
 | Buzzer (active, 5V) | 1 | Round black component with + and - markings |
 | Jumper wires (female-female) | 6 | Assorted colors |
 
@@ -57,8 +57,8 @@ Connect the ultrasonic sensor to your breadboard and Arduino:
 
 ```cpp
 /*
- * Day 3 Lab: Ultrasonic Ruler â€” Distance Reader
- * Team ___ â€” Creation Station #___
+ * Day 3 Lab: Ultrasonic Ruler -- Distance Reader
+ * Team ___ -- Creation Station #___
  * Purpose: Read distance from HC-SR04 and display on LCD
  * Expected result: LCD shows distance in cm that tracks hand movement
  */
@@ -116,7 +116,7 @@ void loop() {
 
 1. Send the sketch to the board
 2. Hold a flat object (hand, book) in front of the sensor
-3. Move closer and farther â€” watch the LCD values change
+3. Move closer and farther -- watch the LCD values change
 
 > **EXPECTED RESULT:** LCD shows distance in centimeters (2-400 cm range) on line 2. Values decrease as object approaches, increase as object retreats. Display says "Out of range" when nothing is within ~4 meters.
 
@@ -128,8 +128,8 @@ Add an LED and buzzer that respond to distance thresholds:
 
 | Component | Arduino Connection | Wire Color (suggested) |
 | :--------- | :----------------- | :---------------------- |
-| LED anode â†’ 220Î© â†’ Pin 9 | Digital Pin 9 | Orange |
-| Buzzer + â†’ Pin 10 | Digital Pin 10 | Blue |
+| LED anode -> 220 ohm -> Pin 9 | Digital Pin 9 | Orange |
+| Buzzer + -> Pin 10 | Digital Pin 10 | Blue |
 | LED cathode | GND | Black |
 | Buzzer - | GND | Black |
 
@@ -137,8 +137,8 @@ Type this sketch into your editor:
 
 ```cpp
 /*
- * Day 3 Lab: Ultrasonic Ruler â€” Proximity Warning
- * Team ___ â€” Creation Station #___
+ * Day 3 Lab: Ultrasonic Ruler -- Proximity Warning
+ * Team ___ -- Creation Station #___
  * Purpose: LED and buzzer respond to distance thresholds like a parking sensor
  * Expected result: LED warns at < 30cm, buzzer activates at < 15cm
  */
@@ -153,8 +153,8 @@ const int LED_PIN = 9;
 const int BUZZER_PIN = 10;
 
 // Thresholds
-const int WARNING_DISTANCE = 30;   // cm â€” LED turns on
-const int DANGER_DISTANCE = 15;    // cm â€” buzzer activates
+const int WARNING_DISTANCE = 30;   // cm -- LED turns on
+const int DANGER_DISTANCE = 15;    // cm -- buzzer activates
 
 void setup() {
   lcd.begin();
@@ -219,7 +219,7 @@ void loop() {
 1. Move object from far to near slowly
 2. Observe LED turns on at ~30 cm and LCD shows "WARNING"
 3. Observe buzzer activates at ~15 cm and LCD shows "DANGER"
-4. Move away â€” both turn off and LCD shows "SAFE"
+4. Move away -- both turn off and LCD shows "SAFE"
 
 > **EXPECTED RESULT:** As object approaches: LED illuminates first (warning at 30 cm) with LCD showing "WARNING", then buzzer joins (danger at 15 cm) with LCD showing "DANGER - STOP!". Moving away reverses the behavior and LCD returns to "SAFE".
 
@@ -277,7 +277,7 @@ previousDistance = distance;
 Use `map()` and `analogWrite()` to make LED brightness proportional to distance. Close = bright. Far = dim.
 
 ```cpp
-int brightness = map(distance, 0, 100, 255, 0);  // 0-100cm â†’ 255-0 brightness
+int brightness = map(distance, 0, 100, 255, 0);  // 0-100cm -> 255-0 brightness
 brightness = constrain(brightness, 0, 255);       // Clamp to valid PWM range
 analogWrite(LED_PIN, brightness);
 ```
@@ -296,16 +296,16 @@ Wave hand past the sensor to start/stop a timer. First pass = start. Second pass
 | Distance reads ~0 cm always | Object too close (< 2 cm minimum) | Move object 5+ cm from sensor |
 | Distance values jump wildly | Soft/angled reflecting surface | Use flat, hard surface (book, phone, hand) |
 | Buzzer always on even with no object nearby | Buzzer + and - reversed, or always HIGH in code | Check buzzer polarity. Verify `digitalWrite(BUZZER_PIN, LOW)` in safe zone |
-| `pulseIn()` causes long pauses | Default timeout is 1 second | Add timeout parameter: `pulseIn(ECHO_PIN, HIGH, 30000)` (30ms timeout â‰ˆ 5m range) |
+| `pulseIn()` causes long pauses | Default timeout is 1 second | Add timeout parameter: `pulseIn(ECHO_PIN, HIGH, 30000)` (30ms timeout ~= 5m range) |
 | HC-SR04 pins won't fit in breadboard | Pins too wide for standard spacing | Use female-female jumper wires as adapters |
 | LCD shows only blank screen | LCD I2C address wrong or wires disconnected | Check 4 wire connections. Try address 0x3F in code |
-| Compilation error: "LiquidCrystal_I2C not found" | Library not pre-installed | Notify instructor â€” library should be pre-installed |
+| Compilation error: "LiquidCrystal_I2C not found" | Library not pre-installed | Notify instructor -- library should be pre-installed |
 
 ---
 
 ## Key Concept Summary
 
-**Ultrasonic sensors measure distance by timing sound echoes.** The Arduino sends a trigger pulse, the sensor emits ultrasonic sound (inaudible to humans), and measures how long the echo takes to return. Distance = (time Ã— speed of sound) / 2.
+**Ultrasonic sensors measure distance by timing sound echoes.** The Arduino sends a trigger pulse, the sensor emits ultrasonic sound (inaudible to humans), and measures how long the echo takes to return. Distance = (time * speed of sound) / 2.
 
 **Where you'll see this in the real world:**
 - Car parking sensors
@@ -318,4 +318,4 @@ Wave hand past the sensor to start/stop a timer. First pass = start. Second pass
 
 ## Next Up
 
-Continue to [3D Design Sprint Challenge](/lab-manuals/day-03/design-sprint/) â†’
+Continue to [3D Design Sprint Challenge](/lab-manuals/day-03/design-sprint/)

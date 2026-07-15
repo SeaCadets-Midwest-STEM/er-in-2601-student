@@ -21,7 +21,7 @@ session: "1B"
 > **SAFETY:** Read before beginning.
 
 1. **LED polarity matters.** The LED has two legs: a long leg (positive, called **anode**) and a short leg (negative, called **cathode**). The long leg connects to the positive side. Reversed LED = no light.
-2. **Always use a resistor.** The 220Ω resistor protects the LED from burning out. Never connect an LED directly to power without a resistor.
+2. **Always use a resistor.** The 220 ohm resistor protects the LED from burning out. Never connect an LED directly to power without a resistor.
 3. **Double-check wiring before sending code to the board.** Wrong connections won't destroy the board, but they will confuse you. Verify your connections before running your sketch.
 4. **Gentle with jumper wires.** Don't bend wires at sharp angles near the plastic ends. They will crack and stop conducting.
 
@@ -42,7 +42,7 @@ Verify all items are present at your station. Check each box.
 | Arduino Uno Q (mounted at station) | 1 | [ ] |
 | Breadboard (830-point, mounted at station) | 1 | [ ] |
 | Red LED (5mm) | 1 | [ ] |
-| 220Ω resistor (color bands: red-red-brown-gold) | 1 | [ ] |
+| 220 ohm resistor (color bands: red-red-brown-gold) | 1 | [ ] |
 | Jumper wires (female-female, assorted colors) | 4 | [ ] |
 | USB-C cable (board connected to power) | 1 | [ ] |
 
@@ -58,7 +58,7 @@ The LED needs three connections: **power** (from Pin 9), **current limiting** (t
 
 #### 1a - Place the resistor
 
-- Take the 220Ω resistor. One end into the breadboard at any convenient row (e.g., row **C5**). The other end will stick out the other side - that's row **E5** on a standard breadboard.
+- Take the 220 ohm resistor. One end into the breadboard at any convenient row (e.g., row **C5**). The other end will stick out the other side - that's row **E5** on a standard breadboard.
 - The resistor can go in any orientation - it works the same both ways.
 
 #### 1b - Place the LED
@@ -76,13 +76,13 @@ The LED needs three connections: **power** (from Pin 9), **current limiting** (t
 #### 1d - Connect GND
 
 - Take another jumper wire. One end into Arduino **GND** (any GND pin). Other end into the breadboard row matching the LED short leg (row **C7** or the connected row on the other side).
-- This completes the circuit: Pin 9 → resistor → LED → GND.
+- This completes the circuit: Pin 9 -> resistor -> LED -> GND.
 
 #### 1e - Verify wiring
 
 > **EXPECTED RESULT:** Your circuit should follow this path:
 >
-> **Pin 9 → jumper wire → 220Ω resistor → LED long leg (anode) → LED short leg (cathode) → jumper wire → GND**
+> **Pin 9 -> jumper wire -> 220 ohm resistor -> LED long leg (anode) -> LED short leg (cathode) -> jumper wire -> GND**
 >
 > Current flows from Pin 9, through the resistor (which limits current to protect the LED), through the LED (which lights up), and back to GND. The LED lights when Pin 9 is set to HIGH (5V).
 
@@ -199,9 +199,9 @@ void loop() {
 
 #### 3a - Send to board
 
-- Tap the **Verify** button (checkmark ✓ icon) on the toolbar first. This compiles your code and checks for errors.
+- Tap the **Verify** button (checkmark icon) on the toolbar first. This compiles your code and checks for errors.
 - If you see errors in red text at the bottom of the screen, fix the first error and try again. Common errors are listed in Troubleshooting below.
-- When verification passes, click the **Upload** button (right-arrow -> icon) on the toolbar to transfer your sketch to the Arduino board.
+- When verification passes, click the **Upload** button (right-arrow icon) on the toolbar to transfer your sketch to the Arduino board.
 
 #### 3b - Observe
 
@@ -287,8 +287,8 @@ Invent your own pattern. Write the description and the code.
 
 | Symptom | Most Likely Cause | Fix |
 | :--- | :--- | :--- |
-| LED doesn't light at all | LED reversed | Swap the LED legs. Long leg → Pin 9 side. Short leg → GND side. |
-| LED doesn't light at all | Missing resistor | Add the 220Ω resistor in series with the LED. |
+| LED doesn't light at all | LED reversed | Swap the LED legs. Long leg -> Pin 9 side. Short leg -> GND side. |
+| LED doesn't light at all | Missing resistor | Add the 220 ohm resistor in series with the LED. |
 | LED stays ON, doesn't blink | Sketch not sent to board | Click Upload again. Check status bar says "Done transferring." |
 | LED stays ON, doesn't blink | Both delay values = 0 | Change delays to at least 100. |
 | Compilation error in red text | Missing semicolon | Look at the line BEFORE the error. Add `;` at end of statement. |
@@ -300,7 +300,7 @@ Invent your own pattern. Write the description and the code.
 
 ## Save Your Work
 
-1. Tap the **Save** icon (disk 💾) on the toolbar.
+1. Tap the **Save** icon (disk icon) on the toolbar.
 2. Name the sketch: `Station__[number]_Hello_Matrix` (e.g., `Station_03_Hello_Matrix`)
 3. Confirm the sketch saves to the Arduino Uno Q's local storage.
 4. Observer/Documenter: Record in this manual which patterns your team completed and any notes.
@@ -329,4 +329,4 @@ Invent your own pattern. Write the description and the code.
 
 ## Next Up
 
-Continue to [Session 1C: LED Chase Pattern](/lab-manuals/day-01/led-chase/) →
+Continue to [Session 1C: LED Chase Pattern](/lab-manuals/day-01/led-chase/) ->
