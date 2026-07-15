@@ -1,0 +1,12 @@
+{{ $raw := .Inner | strings.TrimSpace }}
+{{ $key := $raw | strings.ReplaceRE "\\s+" " " }}
+{{ $lookup := index site.Data "mermaid-diagrams" }}
+{{ $filename := index $lookup $key }}
+{{ if $filename }}
+  <figure class="mermaid-diagram">
+    <img src="/mermaid/{{ $filename }}" alt="Mermaid diagram" loading="lazy">
+  </figure>
+{{ else }}
+  <pre><code class="chroma language-mermaid">{{ .Inner | htmlEscape }}</code></pre>
+  <p class="mermaid-error"><em>Diagram image not found for this Mermaid block.</em></p>
+{{ end }}
