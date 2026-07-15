@@ -14,17 +14,10 @@
 <body>
   <header class="site-header">
     <nav class="container">
-      <a href="{{ "" | relURL }}" class="site-title">{{ site.Params.program_name }}</a>
+      {{ partial "safelink" (dict "page" "/" "text" site.Params.program_name) }}
       <ul class="nav-links">
         {{ range site.Menus.main }}
-        {{- $target := site.GetPage .URL -}}
-        {{- if and $target $target.PublishDate (lt now $target.PublishDate) -}}
-        <li><span class="safelink safelink-locked" title="Available {{ $target.PublishDate.Format "2006-01-02" }}">{{ .Name }} <span class="safelink-badge">🔒 {{ $target.PublishDate.Format "2006-01-02" }}</span></span></li>
-        {{- else if not $target -}}
-        <li><span class="safelink safelink-missing" title="Page not yet published">{{ .Name }} <span class="safelink-badge">⚠️ Coming Soon</span></span></li>
-        {{- else -}}
-        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-        {{- end }}
+        <li>{{ partial "safelink" (dict "page" .URL "text" .Name) }}</li>
         {{ end }}
       </ul>
     </nav>
@@ -46,7 +39,11 @@
           <h4>Learn More</h4>
           <ul>
             {{ range site.Menus.footer }}
-            <li><a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
+            {{- if .Params.external -}}
+            <li><a href="{{ .URL }}" target="_blank" rel="noopener">{{ .Name }}</a></li>
+            {{- else -}}
+            <li>{{ partial "safelink" (dict "page" .URL "text" .Name) }}</li>
+            {{- end }}
             {{ end }}
           </ul>
         </div>

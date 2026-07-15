@@ -1,43 +1,4 @@
-{{ $pageRef := .Get "page" }}
-{{ $label := .Inner }}
-{{ if not $label }}
-  {{ $label = "" }}
-{{ end }}
+{{- $pageRef := .Get "page" -}}
+{{- $label := .Inner | chomp -}}
 
-{{ $target := site.GetPage $pageRef }}
-
-{{ if not $target }}
-  <span class="safelink safelink-missing" title="Page not yet published">
-    {{ if $label }}{{ $label }}{{ else }}{{ $pageRef }}{{ end }}
-    <span class="safelink-badge">⚠️ Coming Soon</span>
-  </span>
-{{ else }}
-  {{ if not $label }}
-    {{ $label = $target.Params.linkTitle }}
-  {{ end }}
-  {{ if not $label }}
-    {{ $label = $target.Title }}
-  {{ end }}
-
-  {{ $now := now }}
-  {{ if $target.Draft }}
-    <span class="safelink safelink-missing" title="Page not yet published">
-      {{ $label }}
-      <span class="safelink-badge">⚠️ Coming Soon</span>
-    </span>
-  {{ else if and $target.ExpiryDate (ge $now $target.ExpiryDate) }}
-    <span class="safelink safelink-expired" title="Expired {{ $target.ExpiryDate.Format "2006-01-02" }}">
-      {{ $label }}
-      <span class="safelink-badge">⏰ Expired</span>
-    </span>
-  {{ else if and $target.PublishDate (lt $now $target.PublishDate) }}
-    <span class="safelink safelink-locked" title="Available {{ $target.PublishDate.Format "2006-01-02" }}">
-      {{ $label }}
-      <span class="safelink-badge">🔒 {{ $target.PublishDate.Format "2006-01-02" }}</span>
-    </span>
-  {{ else }}
-    <a class="safelink" href="{{ $target.RelPermalink }}">
-      {{ $label }}
-    </a>
-  {{ end }}
-{{ end }}
+{{- partial "safelink" (dict "page" $pageRef "text" $label) -}}

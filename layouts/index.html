@@ -5,7 +5,7 @@
     <h1>{{ site.Params.program_name }}</h1>
     <p class="hero-subtitle">{{ site.Params.program_code }} &middot; Student Companion Site</p>
     <p class="hero-dates">{{ site.Params.event_start }} &ndash; {{ site.Params.event_end }}</p>
-    <a href="{{ "schedule/" | relURL }}" class="btn btn-primary">View the Schedule</a>
+    {{ partial "safelink" (dict "page" "/schedule/" "text" "View the Schedule") }}
   </section>
 
   <section class="overview container">
@@ -25,31 +25,31 @@
         <span class="day-number">Day 1</span>
         <h3>The Translator's Spark</h3>
         <p>Firmware intro, programming logic, control structures, and hardware I/O with Arduino Uno Q.</p>
-        <a href="{{ "schedule/day-01/" | relURL }}">Details &rarr;</a>
+        {{ partial "safelink" (dict "page" "/schedule/day-01/" "text" "Details →") }}
       </div>
       <div class="day-card">
         <span class="day-number">Day 2</span>
         <h3>Sensory Perception</h3>
         <p>Sensors, ADC, analog input, hysteresis, and breadboard circuits.</p>
-        <a href="{{ "schedule/day-02/" | relURL }}">Details &rarr;</a>
+        {{ partial "safelink" (dict "page" "/schedule/day-02/" "text" "Details →") }}
       </div>
       <div class="day-card">
         <span class="day-number">Day 3</span>
         <h3>Shaping the Physical World</h3>
         <p>3D parametric modeling, design for manufacturing, slicing, and additive manufacturing.</p>
-        <a href="{{ "schedule/day-03/" | relURL }}">Details &rarr;</a>
+        {{ partial "safelink" (dict "page" "/schedule/day-03/" "text" "Details →") }}
       </div>
       <div class="day-card">
         <span class="day-number">Day 4</span>
         <h3>The Connected Hive</h3>
         <p>IoT, MQTT, BLE board-to-board communication, and telemetry dashboards.</p>
-        <a href="{{ "schedule/day-04/" | relURL }}">Details &rarr;</a>
+        {{ partial "safelink" (dict "page" "/schedule/day-04/" "text" "Details →") }}
       </div>
       <div class="day-card">
         <span class="day-number">Day 5</span>
         <h3>The Horizon & Launch</h3>
         <p>Capstone project build, demo day presentations, and career pathways.</p>
-        <a href="{{ "schedule/day-05/" | relURL }}">Details &rarr;</a>
+        {{ partial "safelink" (dict "page" "/schedule/day-05/" "text" "Details →") }}
       </div>
     </div>
   </section>
@@ -59,7 +59,7 @@
     <p>
       Reference sheets, lab guides, and program information — everything you need while you're here.
     </p>
-    <a href="{{ "resources/" | relURL }}" class="btn btn-secondary">Browse Resources</a>
+    {{ partial "safelink" (dict "page" "/resources/" "text" "Browse Resources") }}
   </section>
 
 </div>

@@ -1,11 +1,4 @@
-{{ $target := site.GetPage (.Get "page") }}
+{{- $pageRef := .Get "page" -}}
+{{- $label := .Inner | chomp -}}
 
-{{ if $target }}
-  <a href="{{ $target.RelPermalink }}">
-    {{ .Inner }}
-  </a>
-{{ else }}
-  <span class="disabled-link">
-    {{ .Inner }}
-  </span>
-{{ end }}
+{{- partial "safelink" (dict "page" $pageRef "text" $label) -}}

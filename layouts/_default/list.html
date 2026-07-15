@@ -7,17 +7,17 @@
 
   {{ range .Sections }}
   <div class="list-item">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <h2>{{ partial "safelink" (dict "page" .RelPermalink "text" .Title) }}</h2>
     {{ with .Summary }}<p>{{ . }}</p>{{ end }}
-    <a href="{{ .RelPermalink }}" class="read-more">Learn more &rarr;</a>
+    {{ partial "safelink" (dict "page" .RelPermalink "text" "Learn more →") }}
   </div>
   {{ end }}
 
   {{ range .Pages }}
   <div class="list-item">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <h2>{{ partial "safelink" (dict "page" .RelPermalink "text" .Title) }}</h2>
     {{ with .Summary }}<p>{{ . }}</p>{{ end }}
-    <a href="{{ .RelPermalink }}" class="read-more">Read more &rarr;</a>
+    {{ partial "safelink" (dict "page" .RelPermalink "text" "Read more →") }}
   </div>
   {{ end }}
 </article>

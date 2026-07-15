@@ -6,29 +6,5 @@
     {{ .Text }}
   </a>
 {{- else -}}
-  {{- $label := .PlainText | strings.TrimSuffix "/" -}}
-  {{- $target := site.GetPage $dest -}}
-
-  {{- if not $target -}}
-    <span class="safelink safelink-missing" title="Page not yet published">
-      {{ $label }}
-      <span class="safelink-badge">⚠️ Coming Soon</span>
-    </span>
-  {{- else if $target.PublishDate -}}
-    {{- $now := now -}}
-    {{- if lt $now $target.PublishDate -}}
-      <span class="safelink safelink-locked" title="Available {{ $target.PublishDate.Format "2006-01-02" }}">
-        {{ $label }}
-        <span class="safelink-badge">🔒 {{ $target.PublishDate.Format "2006-01-02" }}</span>
-      </span>
-    {{- else -}}
-      <a class="safelink" href="{{ $target.RelPermalink }}">
-        {{ $label }}
-      </a>
-    {{- end -}}
-  {{- else -}}
-    <a class="safelink" href="{{ $target.RelPermalink }}">
-      {{ $label }}
-    </a>
-  {{- end -}}
+  {{- partial "safelink" (dict "page" $dest "text" .PlainText) -}}
 {{- end -}}
