@@ -2,7 +2,7 @@
 title: "Day 1 - Firmware Foundations"
 description: "Lab manuals for Day 1 sessions: LED control, loops, and button input."
 date: 2025-01-01
-publish_date: "2026-07-27"
+publish_date: "2026-07-01"
 ---
 
 On Day 1, you'll write your first firmware programs and build circuits that bring the microcontroller to life.

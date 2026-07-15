@@ -2,7 +2,7 @@
 title: "Lab: Hello Matrix - Your First Program"
 description: "Wire an LED and write your first Arduino sketch from scratch."
 date: 2025-01-01
-publish_date: "2026-07-26"
+publish_date: "2026-07-01"
 session: "1B"
 ---
 

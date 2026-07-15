@@ -1,7 +1,7 @@
 ---
 title: "Day 1 - The Translator's Spark"
 date: 2025-01-01
-publish_date: "2026-07-27"
+publish_date: "2026-07-01"
 weight: 1
 ---
 
