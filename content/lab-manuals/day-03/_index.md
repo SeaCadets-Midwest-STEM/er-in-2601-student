@@ -3,7 +3,6 @@ title: "Day 3 Lab Manuals"
 description: "Hands-on labs for Day 3: Ultrasonic sensing, proximity detection, and 3D design."
 date: 2025-01-01
 publish_date: "2026-07-28"
-menu: main
 ---
 
 Day 3 focuses on ultrasonic distance sensing and 3D design for your project enclosure.

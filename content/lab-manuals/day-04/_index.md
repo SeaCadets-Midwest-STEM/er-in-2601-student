@@ -3,7 +3,6 @@ title: "Day 4 Lab Manuals"
 description: "Hands-on labs for Day 4: MQTT networking, data collection for machine learning, and Node-RED dashboards."
 date: 2025-01-01
 publish_date: "2026-07-29"
-menu: main
 ---
 
 Day 4 explores IoT communication -- connecting your Arduino to a network of devices using MQTT, collecting sensor data for machine learning, and building real-time dashboards.

@@ -17,7 +17,18 @@
       {{ partial "safelink" (dict "page" "/" "text" site.Params.program_name) }}
       <ul class="nav-links">
         {{ range site.Menus.main }}
+        {{ if .HasChildren }}
+        <li class="nav-dropdown">
+          {{ partial "safelink" (dict "page" .URL "text" .Name) }}
+          <ul class="nav-dropdown-menu">
+            {{ range .Children }}
+            <li>{{ partial "safelink" (dict "page" .URL "text" .Name) }}</li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ else }}
         <li>{{ partial "safelink" (dict "page" .URL "text" .Name) }}</li>
+        {{ end }}
         {{ end }}
       </ul>
     </nav>
