@@ -1,0 +1,103 @@
+# Use "/" as baseURL so Hugo generates simple relative paths
+# (e.g., ./schedule/ instead of ./er-in-2601-student/schedule/).
+# The public/ dir is deployed directly to the repo's GitHub Pages root,
+# so the subpath should NOT be in generated URLs.
+# relativeURLs = true ensures all links are relative, which works
+# both locally (hugo server) and on GitHub Pages.
+baseURL = "/"
+relativeURLs = true
+languageCode = "en-us"
+title = "Invention Lab 2026 — Student Companion"
+# No external theme — custom layouts in /layouts directory
+
+# Content directory
+contentDir = "content"
+
+# Build configuration
+[build]
+  writeStats = true
+
+# Pagination
+paginate = 10
+paginatePath = "page"
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Site parameters
+[params]
+  description = "Student companion site for ER-IN-2601 Invention Lab 2026 — a 5-day hands-on training in firmware, sensors, 3D printing, IoT, and capstone projects."
+  program_name = "Invention Lab 2026"
+  program_code = "ER-IN-2601"
+  event_start = "July 26, 2026"
+  event_end = "August 1, 2026"
+  org_name = "Sea Cadets Midwest STEM"
+  seacadets_url = "https://www.seacadets.org"
+
+  [params.social]
+    facebook = "https://www.facebook.com/usnscc"
+    instagram = "https://www.instagram.com/americaseacadets"
+    youtube = "https://www.youtube.com/@SeaCadetsUS"
+
+# Primary navigation
+[[menus.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menus.main]]
+  name = "Schedule"
+  url = "/schedule/"
+  weight = 2
+
+[[menus.main]]
+  name = "Resources"
+  url = "/resources/"
+  weight = 3
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 4
+
+# Footer navigation
+[[menus.footer]]
+  name = "Sea Cadets National"
+  url = "https://www.seacadets.org"
+  weight = 10
+  [menus.footer.params]
+    external = true
+
+[[menus.footer]]
+  name = "Join Sea Cadets"
+  url = "https://www.seacadets.org/join/"
+  weight = 20
+  [menus.footer.params]
+    external = true
+
+# Markup configuration
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+
+# MIME types — ensure static CSS serves as text/css
+[mediatypes]
+  [mediatypes."text/css"]
+    suffixes = ["css"]
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+# RSS configuration
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "feed"

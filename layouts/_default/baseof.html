@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="{{ site.LanguageCode }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ if .IsHome }}{{ site.Params.description }}{{ else }}{{ .Summary }}{{ end }}">
+  <title>{{ if not .IsHome }}{{ .Title }} &mdash; {{ end }}{{ site.Title }}</title>
+  {{ if hugo.IsServer }}
+  <meta name="robots" content="noindex, nofollow">
+  {{ end }}
+  <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+  {{ template "_internal/opengraph.html" . }}
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container">
+      <a href="{{ "" | relURL }}" class="site-title">{{ site.Params.program_name }}</a>
+      <ul class="nav-links">
+        {{ range site.Menus.main }}
+        {{- $target := site.GetPage .URL -}}
+        {{- if and $target $target.PublishDate (lt now $target.PublishDate) -}}
+        <li><span class="safelink safelink-locked" title="Available {{ $target.PublishDate.Format "2006-01-02" }}">{{ .Name }} <span class="safelink-badge">🔒 {{ $target.PublishDate.Format "2006-01-02" }}</span></span></li>
+        {{- else if not $target -}}
+        <li><span class="safelink safelink-missing" title="Page not yet published">{{ .Name }} <span class="safelink-badge">⚠️ Coming Soon</span></span></li>
+        {{- else -}}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{- end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>{{ site.Params.program_name }}</h4>
+          <p>{{ site.Params.program_code }} &middot; {{ site.Params.org_name }}</p>
+          <p>{{ site.Params.event_start }} &ndash; {{ site.Params.event_end }}</p>
+        </div>
+        <div class="footer-column">
+          <h4>Learn More</h4>
+          <ul>
+            {{ range site.Menus.footer }}
+            <li><a href="{{ .URL }}"{{ if .Params.external }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul class="social-links">
+            {{ with site.Params.social.facebook }}<li><a href="{{ . }}" target="_blank" rel="noopener">Facebook</a></li>{{ end }}
+            {{ with site.Params.social.instagram }}<li><a href="{{ . }}" target="_blank" rel="noopener">Instagram</a></li>{{ end }}
+            {{ with site.Params.social.youtube }}<li><a href="{{ . }}" target="_blank" rel="noopener">YouTube</a></li>{{ end }}
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">&copy; {{ now.Format "2006" }} {{ site.Params.org_name }}. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
