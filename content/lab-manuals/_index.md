@@ -1,7 +1,7 @@
 ---
 title: "Lab Manuals"
+date: 2025-01-01
 description: "Hands-on lab manuals for each session of Invention Lab 2026."
-publishDate: 2026-07-28
 ---
 
 This section contains the detailed lab manuals for each session of Invention Lab 2026. Each lab manual provides step-by-step instructions, safety guidelines, parts lists, code examples, and troubleshooting guides.

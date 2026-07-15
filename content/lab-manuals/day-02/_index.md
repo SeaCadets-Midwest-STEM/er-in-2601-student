@@ -1,7 +1,8 @@
 ---
 title: "Day 2 - Sensors and Analog Input"
 description: "Lab manuals for Day 2 sessions: light sensors, potentiometers, and hysteresis."
-publishDate: 2026-07-28
+date: 2025-01-01
+publish_date: "2026-07-28"
 ---
 
 On Day 2, you'll learn how microcontrollers measure the real world. You'll build voltage dividers, read analog sensor data, and discover why real-world signals need special handling.

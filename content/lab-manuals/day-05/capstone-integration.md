@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Capstone Device Integration"
 description: "Integrate sensors, wireless communication, visual output, and 3D printed enclosure into a complete Hidden Economy device."
-date: 2026-07-31
-publishDate: 2026-07-31
+date: 2025-01-01
+publish_date: "2026-07-31"
 session: "5A"
 ---
 

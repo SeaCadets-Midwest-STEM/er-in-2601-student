@@ -1,6 +1,7 @@
 ---
 title: "Day 3 - Shaping the Physical World"
-date: 2026-07-29
+date: 2025-01-01
+publish_date: "2026-07-29"
 weight: 3
 ---
 

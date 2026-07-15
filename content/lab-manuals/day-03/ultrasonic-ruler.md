@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Ultrasonic Ruler â€” Distance Detection"
 description: "Wire an HC-SR04 ultrasonic sensor and build a proximity-warning system with LED and buzzer indicators."
-date: 2026-07-28
-publishDate: 2026-07-28
+date: 2025-01-01
+publish_date: "2026-07-28"
 session: "3B"
 ---
 

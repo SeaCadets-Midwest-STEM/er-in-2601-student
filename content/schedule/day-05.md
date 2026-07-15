@@ -1,6 +1,7 @@
 ---
 title: "Day 5 - The Horizon and Launch"
-date: 2026-07-31
+date: 2025-01-01
+publish_date: "2026-07-31"
 weight: 5
 ---
 

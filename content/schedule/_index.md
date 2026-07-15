@@ -1,5 +1,6 @@
 ---
 title: "Program Schedule"
+date: 2025-01-01
 description: "Full 5-day schedule for Invention Lab 2026, July 27 through July 31."
 ---
 

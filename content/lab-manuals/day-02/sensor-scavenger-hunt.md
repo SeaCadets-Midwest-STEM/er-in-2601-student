@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Sensor Scavenger Hunt Challenge"
 description: "Design and build a sensor-based device that reacts to its environment."
-date: 2026-07-28
-publishDate: 2026-07-28
+date: 2025-01-01
+publish_date: "2026-07-28"
 session: "2F"
 ---
 

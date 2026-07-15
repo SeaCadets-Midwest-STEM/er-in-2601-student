@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Motion Pattern Data Collection"
 description: "Collect labeled sensor data for different movement patterns using PIR and ultrasonic sensors."
-date: 2026-07-29
-publishDate: 2026-07-29
+date: 2025-01-01
+publish_date: "2026-07-29"
 session: "4B"
 ---
 

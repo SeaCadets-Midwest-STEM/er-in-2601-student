@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: LED Chase Pattern â€” Loops That Do the Work"
 description: "Make three LEDs chase each other using a for loop."
-date: 2026-07-26
-publishDate: 2026-07-26
+date: 2025-01-01
+publish_date: "2026-07-26"
 session: "1C"
 ---
 

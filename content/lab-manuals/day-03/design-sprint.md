@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: 3D Design Sprint Challenge"
 description: "Design, model, and prepare a functional enclosure for your Arduino project using FreeCAD and OrcaSlicer."
-date: 2026-07-28
-publishDate: 2026-07-28
+date: 2025-01-01
+publish_date: "2026-07-28"
 session: "3F"
 ---
 

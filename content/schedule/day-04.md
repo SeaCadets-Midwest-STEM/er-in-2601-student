@@ -1,6 +1,7 @@
 ---
 title: "Day 4 - The Connected Hive"
-date: 2026-07-30
+date: 2025-01-01
+publish_date: "2026-07-30"
 weight: 4
 ---
 

@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: MQTT Board-to-Board Communication"
 description: "Connect your Arduino Uno Q to the lab MQTT network and share sensor data wirelessly between stations."
-date: 2026-07-29
-publishDate: 2026-07-29
+date: 2025-01-01
+publish_date: "2026-07-29"
 session: "4A"
 ---
 

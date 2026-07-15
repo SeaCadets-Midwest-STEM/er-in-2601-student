@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Potentiometer and Analog Reading"
 description: "Explore potentiometers as variable resistors and practice using map() to translate sensor ranges."
-date: 2026-07-27
-publishDate: 2026-07-27
+date: 2025-01-01
+publish_date: "2026-07-27"
 session: "2C"
 ---
 

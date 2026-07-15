@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Light Sensor Circuit"
 description: "Build a light-sensing circuit using an LDR in a voltage divider and control LED brightness."
-date: 2026-07-27
-publishDate: 2026-07-27
+date: 2025-01-01
+publish_date: "2026-07-27"
 session: "2B"
 ---
 

@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Button Input â€” If/Else Decision Making"
 description: "Wire a pushbutton and write code that makes the board change behavior based on input."
-date: 2026-07-26
-publishDate: 2026-07-26
+date: 2025-01-01
+publish_date: "2026-07-26"
 session: "1D"
 ---
 

@@ -1,8 +1,8 @@
-﻿---
+---
 title: "Lab: Sensor Thresholds and Hysteresis"
 description: "Discover why sensor readings near a threshold cause flickering and learn hysteresis to fix it."
-date: 2026-07-27
-publishDate: 2026-07-27
+date: 2025-01-01
+publish_date: "2026-07-27"
 session: "2D"
 ---
 

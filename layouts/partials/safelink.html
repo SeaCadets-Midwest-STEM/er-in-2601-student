@@ -26,11 +26,18 @@
       {{- $label -}}
       <span class="safelink-badge">⏰ Expired</span>
     </span>
-  {{- else if and $target.PublishDate (lt $now $target.PublishDate) -}}
-    <span class="safelink safelink-locked" title="Available {{ $target.PublishDate.Format "2006-01-02" }}">
-      {{- $label -}}
-      <span class="safelink-badge">🔒 {{ $target.PublishDate.Format "2006-01-02" }}</span>
-    </span>
+  {{- else if $target.Params.publish_date -}}
+    {{- $publishDate := time $target.Params.publish_date -}}
+    {{- if lt $now $publishDate -}}
+      <span class="safelink safelink-locked" title="Available {{ $publishDate.Format "2006-01-02" }}">
+        {{- $label -}}
+        <span class="safelink-badge">🔒 {{ $publishDate.Format "2006-01-02" }}</span>
+      </span>
+    {{- else -}}
+      <a class="safelink" href="{{ $target.RelPermalink }}">
+        {{- $label -}}
+      </a>
+    {{- end -}}
   {{- else -}}
     <a class="safelink" href="{{ $target.RelPermalink }}">
       {{- $label -}}
